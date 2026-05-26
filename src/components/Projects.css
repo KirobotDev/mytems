@@ -1,0 +1,140 @@
+.projects {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects__glow {
+  top: 30%;
+  right: -200px;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+}
+
+.projects__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-3xl);
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.projects__cta {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl);
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 180px;
+}
+
+.repo-card:hover {
+  transform: translateY(-4px);
+}
+
+.repo-card:hover .repo-card__arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.repo-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.repo-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.repo-card__icon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.repo-card__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--accent-primary-light);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-card__arrow {
+  color: var(--text-muted);
+  opacity: 0;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.repo-card__description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: var(--space-lg);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: auto;
+}
+
+.repo-card__language {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.repo-card__language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.repo-card__stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.repo-card__stars svg {
+  color: var(--accent-warm);
+}
+
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
