@@ -3,13 +3,13 @@ name: Deploy Vite site to GitHub Pages
 on:
   push:
     branches:
-      - math
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: write
     steps:
       - name: Checkout repository
